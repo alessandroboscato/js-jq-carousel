@@ -10,3 +10,22 @@
 // Generiamo i pallini con JS
 // Consiglio del giorno:
 // Come sempre è importante usare la documentazione di jQuery per scoprire/rinfrescare memoria sulle funzioni che potrebbero esserci utili.
+
+$(document).ready(function() {
+
+  $(".next").click(
+    function() {
+      var imgActive = $("img.active");
+      imgActive.removeClass("active");
+
+      if (imgActive.hasClass("last")) {
+        var nextImg = $("img.first");
+      } else {
+        nextImg = imgActive.next();
+      }
+
+      nextImg.addClass("active");
+    }
+  );
+
+});
