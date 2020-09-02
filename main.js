@@ -28,4 +28,18 @@ $(document).ready(function() {
     }
   );
 
+  $(".prev").click(
+    function() {
+      var imgActive = $("img.active");
+      imgActive.removeClass("active");
+
+      if (imgActive.hasClass("first")) {
+        var nextImg = $("img.last");
+      } else {
+        nextImg = imgActive.prev();
+      }
+
+      nextImg.addClass("active");
+    }
+  );
 });
