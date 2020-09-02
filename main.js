@@ -15,11 +15,11 @@ $(document).ready(function() {
 
   $(".next").click(
     function() {
-      var imgActive = $("img.active");
+      var imgActive = $(".active");
       imgActive.removeClass("active");
 
       if (imgActive.hasClass("last")) {
-        var nextImg = $("img.first");
+        var nextImg = $(".first");
       } else {
         nextImg = imgActive.next();
       }
@@ -30,11 +30,11 @@ $(document).ready(function() {
 
   $(".prev").click(
     function() {
-      var imgActive = $("img.active");
+      var imgActive = $(".active");
       imgActive.removeClass("active");
 
       if (imgActive.hasClass("first")) {
-        var nextImg = $("img.last");
+        var nextImg = $(".last");
       } else {
         nextImg = imgActive.prev();
       }
