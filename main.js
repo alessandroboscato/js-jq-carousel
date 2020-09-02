@@ -43,3 +43,32 @@ $(document).ready(function() {
     }
   );
 });
+
+$(document).keydown(
+  function(event) {
+    if (event.which == 39) {
+
+    var imgActive = $(".active");
+    imgActive.removeClass("active");
+
+    if (imgActive.hasClass("last")) {
+      var nextImg = $(".first");
+    } else {
+      nextImg = imgActive.next();
+    }
+
+    nextImg.addClass("active");
+  } else if (event.which == 37) {
+    var imgActive = $(".active");
+    imgActive.removeClass("active");
+
+    if (imgActive.hasClass("first")) {
+      var nextImg = $(".last");
+    } else {
+      nextImg = imgActive.prev();
+    }
+
+    nextImg.addClass("active");
+  }
+  }
+);
